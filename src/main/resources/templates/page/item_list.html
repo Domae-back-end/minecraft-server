@@ -12,7 +12,7 @@
 border: 1px solid; margin: 0 0 10px 10px; color: black; padding: 2px; background-color: #E2E2E2;" >아이템 생성</a>
             </div>
             <div class="card-body">
-                <form>
+                <form action="/api/delete_item" method="post">
                 <table id="datatablesSimple">
                     <thead>
                     <tr>
@@ -46,8 +46,8 @@ border: 1px solid; margin: 0 0 10px 10px; color: black; padding: 2px; background
                         <td th:text="${item.item_make}"></td>
                         <td th:text="${item.item_createday}"></td>
                         <td th:text="${item.item_fixday}"></td>
-                        <td><a href="" style="text-decoration-line: none;">아이템 수정</a></td>
-                        <td><input type="checkbox" th:value="${item.item_pid}"></td>
+                        <td><a th:href="@{/admin/item_update(item_pid = ${item.item_pid})}" style="text-decoration-line: none;">아이템 수정</a></td>
+                        <td><input type="checkbox" name="delete_items" th:value="${item.item_pid}"></td>
                     </tr>
                     </tbody>
                 </table>
