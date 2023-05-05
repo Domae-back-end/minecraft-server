@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <main>
+        <div class="container-fluid px-4">
+            <h1>유저 관리</h1>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    유저 목록
+                </div>
+                <div class="card-body">
+                    <form action="/api/update_money" method="post">
+                        <table id="datatablesSimple">
+                            <thead>
+                            <tr>
+                                <th>유저 닉네임</th>
+                                <th>유저 uuid</th>
+                                <th>유저 돈</th>
+                                <th>유저 가입 날짜</th>
+                                <th>유저 최근 접속 날짜</th>
+                                <th>유저 돈 수정</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th>유저 닉네임</th>
+                                <th>유저 uuid</th>
+                                <th>유저 돈</th>
+                                <th>유저 가입 날짜</th>
+                                <th>유저 최근 접속 날짜</th>
+                                <th>유저 돈 수정</th>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            <tr th:each="user : ${user_list}">
+                                <td th:text="${user.user_name}"></td>
+                                <td th:text="${user.user_uuid}"></td>
+                                <td th:text="${user.user_money}"></td>
+                                <td th:text="${user.user_createday}"></td>
+                                <td th:text="${user.user_leaveday}"></td>
+                                <td>
+                                    <input type="hidden" name="user_pid" th:value="${user.user_pid}" />
+                                    <input type="number" name="user_money" th:value="${user.user_money}" /> 원
+
+                            </tr>
+                            </tbody>
+                        </table>
+                        <input style="float: right;" type="submit" value="돈 수정하기"></td>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</html>
