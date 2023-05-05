@@ -15,8 +15,8 @@ spring:
     cache : false
   datasource:
     url: jdbc:mysql://localhost:3306/minecraft
-    username:
-    password: 
+    username: 
+    password:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     open-in-view: false

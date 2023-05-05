@@ -2,13 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <main>
     <div class="container-fluid px-4">
+        <br>
         <h1>아이템 관리</h1>
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
                 아이템 목록
+                <a href="/admin/item_create" style="float: right; text-decoration-line: none;
+border: 1px solid; margin: 0 0 10px 10px; color: black; padding: 2px; background-color: #E2E2E2;" >아이템 생성</a>
             </div>
             <div class="card-body">
+                <form>
                 <table id="datatablesSimple">
                     <thead>
                     <tr>
@@ -42,11 +46,14 @@
                         <td th:text="${item.item_make}"></td>
                         <td th:text="${item.item_createday}"></td>
                         <td th:text="${item.item_fixday}"></td>
-                        <td>개발중..</td>
-                        <td>개발중..</td>
+                        <td><a href="" style="text-decoration-line: none;">아이템 수정</a></td>
+                        <td><input type="checkbox" th:value="${item.item_pid}"></td>
                     </tr>
                     </tbody>
                 </table>
+                    <input type="submit" style="float: right;" value="체크한 목록 아이템 삭제">
+
+                </form>
             </div>
         </div>
     </div>

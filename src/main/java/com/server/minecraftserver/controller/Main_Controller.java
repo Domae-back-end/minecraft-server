@@ -35,4 +35,10 @@ public class Main_Controller {
         return "index";
     }
 
+    @RequestMapping("admin/item_create")
+    public String item_create(HttpServletRequest req){
+        req.setAttribute("page","page/item_list");
+        return "index";
+    }
+
 }
