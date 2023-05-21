@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>채팅</title>
+    <link rel='stylesheet' type='text/css' href='/css/chatt.css'>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<div id='chatt'>
+    <h1>WebSocket Chatting</h1>
+    <input type='hidden' id='mid' value='서버공지'>
+    <input type='button' value='채팅 접속하기' id='btnLogin'>
+    <br/>
+    <div id='talk'></div>
+    <div id='sendZone'>
+        <textarea id='msg' value='hi...' ></textarea>
+        <input type='button' value='전송' id='btnSend'>
+    </div>
+</div>
+<script type="text/javascript" src='/js/chatt.js'></script>
+</body>
+</html>

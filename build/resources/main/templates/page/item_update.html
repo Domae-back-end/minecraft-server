@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<main>
+    <div class="container-fluid px-4">
+        <br>
+        <h1>아이템 수정</h1>
+        <br>
+        <form action="/api/update_item" method="post">
+            <input type="hidden" name="item_pid" th:value="${data.item_pid}"/>
+            <input type="hidden" name="item_createday" th:value="${data.item_createday}" />
+            <hr>
+            <input type="text" placeholder="아이템 이름" name="item_name" th:value="${data.item_name}"/>
+            <hr>
+            <input type="text" placeholder="아이템 부가설명" name="item_info" th:value="${data.item_info}"/>
+            & -> 줄바꿈
+            <hr>
+            <!--아이템 타입 넣어야함.-->
+            <select name="item_type">
+                <option th:each="item_type : ${item_type}" th:value="${item_type.type_name}"> [[${item_type.type_name}]]</option>
+            </select>
+            <hr>
+            <input type="text" placeholder="아이템 생성이유" name="item_make" th:value="${data.item_make}"/>
+            <hr>
+            <input type="submit" value="아이템 수정하기" />
+            <hr>
+            <a href="https://abulle.tistory.com/32" target="_blank">색깔 코드 보기.</a>
+            <hr>
+            <br>
+            예시작품)
+            <hr>
+            <img src="/img/item.jpg" >
+        </form>
+    </div>
+</main>
+</html>

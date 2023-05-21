@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<main>
+    <div class="container-fluid px-4">
+        <br>
+        <h1>아이템 생성</h1>
+        <br>
+        <form action="/api/insert_item" method="post">
+            <hr>
+            <input type="text" placeholder="아이템 이름" name="item_name"/>
+            <hr>
+            <input type="text" placeholder="아이템 부가설명" name="item_info"/>
+            & -> 줄바꿈
+            <hr>
+            <select name="item_type">
+                <option th:each="item_type : ${item_type}" th:value="${item_type.type_name}"> [[${item_type.type_name}]]</option>
+            </select>
+            <hr>
+            <input type="text" placeholder="아이템 생성이유" name="item_make"/>
+            <hr>
+            <input type="submit" value="아이템 생성하기" />
+            <hr>
+            <a href="https://abulle.tistory.com/32" target="_blank">색깔 코드 보기.</a>
+            <hr>
+            <br>
+            예시작품)
+            <hr>
+            <img src="/img/item.jpg" >
+        </form>
+    </div>
+</main>
+</html>
